@@ -13,6 +13,13 @@ export const Form = styled.View`
   margin: 0 30px;
 `;
 
+export const Avatar = styled.Image`
+  width: 140px;
+  height: 140px;
+  border-radius: 100px;
+  align-self: center;
+`;
+
 export const FieldLabel = styled.Text`
   font-size: 12px;
   text-align: left;
