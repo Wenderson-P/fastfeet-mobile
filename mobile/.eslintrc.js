@@ -24,7 +24,6 @@ module.exports = {
   },
   plugins: [
     'react',
-    "jsx-ally",
     'prettier',
     "react-hooks",
     "import"
