@@ -13,7 +13,7 @@ const Tabs = createBottomTabNavigator();
 export default function createRouter(isSigned = false) {
   return !isSigned ? (
     <>
-      <Stack.Navigator>
+      <Stack.Navigator headerMode="none">
         <Stack.Screen name="Login" component={SignIn} />
       </Stack.Navigator>
     </>
