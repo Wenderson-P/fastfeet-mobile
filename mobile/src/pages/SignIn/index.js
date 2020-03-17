@@ -13,6 +13,7 @@ export default function SignIn() {
         <FormInput
           keyboardType="number-pad"
           placeholder="Informe seu ID de cadastro"
+          returnKeyType="send"
         />
         <SubmitButton onPress={() => { }}>Entrar no sistema</SubmitButton>
       </Form>
