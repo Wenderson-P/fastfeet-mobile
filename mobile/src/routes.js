@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { TouchableOpacity } from 'react-native';
+
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
@@ -8,9 +10,41 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import SignIn from './pages/SignIn';
 import Delivery from './pages/Delivery';
 import Profile from './pages/Profile';
+import DeliveryDetails from './pages/DeliveryDetails';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
+
+function DeliveryStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Delivery"
+        component={Delivery}
+        options={{
+          title: 'Delivery',
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="DeliveryDetails"
+        component={DeliveryDetails}
+        options={{
+          title: 'Detalhes',
+          headerLeft: ({ navigation }) => (
+            <TouchableOpacity
+              onPress={() => {
+                navigation.goBack();
+              }}
+            >
+              <Icon name="chevron-left" size={20} color="#FFF" />
+            </TouchableOpacity>
+          ),
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
 
 export default function createRouter(isSigned = false) {
   return !isSigned ? (
@@ -29,7 +63,7 @@ export default function createRouter(isSigned = false) {
       >
         <Tabs.Screen
           name="Delivery"
-          component={Delivery}
+          component={DeliveryStack}
           options={{
             tabBarLabel: 'Entregas',
             tabBarIcon: ({ color }) => (
