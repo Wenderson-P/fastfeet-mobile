@@ -5,7 +5,6 @@ export const Container = styled.View`
   border-radius: 4px;
   border: 1px #0000001a;
   margin-bottom: 20px;
-  width: 90%;
   align-self: center;
 `;
 export const Header = styled.View`
@@ -20,7 +19,7 @@ export const Name = styled.Text`
   margin-left: 10px;
 `;
 
-export const Status = styled.Text``;
+export const Status = styled.View``;
 
 export const Footer = styled.View`
   background-color: #f8f9fd;

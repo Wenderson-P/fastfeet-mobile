@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-
+import DeliverySteps from '~/components/DeliverySteps';
 import {
   Container,
   Header,
   DeliveryId,
   Name,
-  Status,
   Footer,
   Field,
   FieldLabel,
@@ -24,9 +23,8 @@ export default function DeliveryInfo({ navigation }) {
           <Icon name="local-shipping" size={24} color="#7D40E7" />
           <Name>Encomenda 01</Name>
         </DeliveryId>
-
-        <Status>aguardando</Status>
       </Header>
+      <DeliverySteps activeStep={1} />
       <Footer>
         <Field>
           <FieldLabel>Data</FieldLabel>
