@@ -1,4 +1,5 @@
 import React from 'react';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import {
   Container,
@@ -13,6 +14,7 @@ export default function DeliveryInfoCard() {
   return (
     <Container>
       <CardHeader>
+        <Icon name="local-shipping" size={24} color="#7D40E7" />
         <HeaderLabel>Informações da entrega</HeaderLabel>
       </CardHeader>
       <Recipient>Ludwig van Beethoven</Recipient>
