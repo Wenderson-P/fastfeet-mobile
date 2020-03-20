@@ -19,8 +19,6 @@ export const Name = styled.Text`
   margin-left: 10px;
 `;
 
-export const Status = styled.View``;
-
 export const Footer = styled.View`
   background-color: #f8f9fd;
   flex-direction: row;
