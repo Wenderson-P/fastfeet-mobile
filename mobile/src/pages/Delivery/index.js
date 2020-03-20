@@ -17,7 +17,7 @@ import {
   FilterOption,
 } from './styles';
 
-export default function Delivery() {
+export default function Delivery({ navigation }) {
   return (
     <Background>
       <Container>
@@ -33,8 +33,7 @@ export default function Delivery() {
             <FilterOption>Entregues</FilterOption>
           </Filters>
         </DeliveryHeader>
-        <DeliveryInfo />
-        <DeliveryInfo />
+        <DeliveryInfo navigation={navigation} />
       </Container>
     </Background>
   );
