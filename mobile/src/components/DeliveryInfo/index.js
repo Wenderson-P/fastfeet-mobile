@@ -34,9 +34,7 @@ export default function DeliveryInfo({ navigation }) {
           <FieldLabel>Cidade</FieldLabel>
           <FieldData>Teresina</FieldData>
         </Field>
-        <DetailsButton
-        // onPress={() => navigation.navigate('DeliveryDetails')}
-        >
+        <DetailsButton onPress={() => navigation.navigate('DeliveryDetails')}>
           <DetailsText>Ver detalhes</DetailsText>
         </DetailsButton>
       </Footer>
