@@ -6,7 +6,7 @@ import DeliveryActionButton from '~/components/DeliveryActionButton';
 
 import { Container, Buttons, Line } from './styles';
 
-export default function DeliveryDetails() {
+export default function DeliveryDetails({ navigation }) {
   return (
     <Container>
       <DeliveryInfoCard />
@@ -24,6 +24,7 @@ export default function DeliveryDetails() {
           iconColor="#E7BA40"
           iconSize={24}
           title="Visualizar Problemas"
+          onPress={() => navigation.navigate('DeliveryProblems')}
         />
         <Line />
         <DeliveryActionButton
