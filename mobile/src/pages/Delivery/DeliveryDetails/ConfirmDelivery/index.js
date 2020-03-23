@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { RNCamera } from 'react-native-camera';
 
-import { Container, Camera } from './styles';
-import Button from '~/components/Button';
+import { Container, Camera, SubmitButton } from './styles';
 
 export default function ConfirmDelivery() {
   const [camera, setCamera] = useState();
@@ -24,7 +23,7 @@ export default function ConfirmDelivery() {
           captureAudio={false}
         />
       </Camera>
-      <Button tittle="Enviar" />
+      <SubmitButton>Enviar</SubmitButton>
     </Container>
   );
 }
