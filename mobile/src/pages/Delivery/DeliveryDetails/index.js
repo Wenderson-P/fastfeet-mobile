@@ -32,6 +32,7 @@ export default function DeliveryDetails({ navigation }) {
           iconColor="#7D40E7"
           iconSize={24}
           title="Confirmar Entrega"
+          onPress={() => navigation.navigate('ConfirmDelivery')}
         />
       </Buttons>
     </Container>
