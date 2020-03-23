@@ -12,6 +12,7 @@ import Delivery from './pages/Delivery';
 import Profile from './pages/Profile';
 import DeliveryDetails from './pages/Delivery/DeliveryDetails';
 import DeliveryProblems from './pages/Delivery/DeliveryDetails/DeliveryProblems';
+import ConfirmDelivery from './pages/Delivery/DeliveryDetails/ConfirmDelivery';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -48,6 +49,22 @@ function DeliveryStack({ }) {
         component={DeliveryProblems}
         options={{
           title: 'Visualizar Problemas',
+          headerLeft: ({ navigation }) => (
+            <TouchableOpacity
+              onPress={() => {
+                navigation.goBack();
+              }}
+            >
+              <Icon name="chevron-left" size={20} color="black" />
+            </TouchableOpacity>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="ConfirmDelivery"
+        component={ConfirmDelivery}
+        options={{
+          title: 'Confirmar entrega',
           headerLeft: ({ navigation }) => (
             <TouchableOpacity
               onPress={() => {
