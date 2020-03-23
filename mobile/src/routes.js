@@ -10,12 +10,13 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import SignIn from './pages/SignIn';
 import Delivery from './pages/Delivery';
 import Profile from './pages/Profile';
-import DeliveryDetails from './pages/DeliveryDetails';
+import DeliveryDetails from './pages/Delivery/DeliveryDetails';
+import DeliveryProblems from './pages/Delivery/DeliveryDetails/DeliveryProblems';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
 
-function DeliveryStack() {
+function DeliveryStack({ }) {
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -37,7 +38,23 @@ function DeliveryStack() {
                 navigation.goBack();
               }}
             >
-              <Icon name="chevron-left" size={20} color="#FFF" />
+              <Icon name="chevron-left" size={20} color="black" />
+            </TouchableOpacity>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="DeliveryProblems"
+        component={DeliveryProblems}
+        options={{
+          title: 'Visualizar Problemas',
+          headerLeft: ({ navigation }) => (
+            <TouchableOpacity
+              onPress={() => {
+                navigation.goBack();
+              }}
+            >
+              <Icon name="chevron-left" size={20} color="black" />
             </TouchableOpacity>
           ),
         }}
