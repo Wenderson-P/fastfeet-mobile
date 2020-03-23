@@ -17,7 +17,7 @@ import ConfirmDelivery from './pages/Delivery/DeliveryDetails/ConfirmDelivery';
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
 
-function DeliveryStack({ }) {
+function DeliveryStack({ navigation }) {
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -33,7 +33,7 @@ function DeliveryStack({ }) {
         component={DeliveryDetails}
         options={{
           title: 'Detalhes',
-          headerLeft: ({ navigation }) => (
+          headerLeft: () => (
             <TouchableOpacity
               onPress={() => {
                 navigation.goBack();
@@ -49,7 +49,7 @@ function DeliveryStack({ }) {
         component={DeliveryProblems}
         options={{
           title: 'Visualizar Problemas',
-          headerLeft: ({ navigation }) => (
+          headerLeft: () => (
             <TouchableOpacity
               onPress={() => {
                 navigation.goBack();
@@ -65,7 +65,7 @@ function DeliveryStack({ }) {
         component={ConfirmDelivery}
         options={{
           title: 'Confirmar entrega',
-          headerLeft: ({ navigation }) => (
+          headerLeft: () => (
             <TouchableOpacity
               onPress={() => {
                 navigation.goBack();
