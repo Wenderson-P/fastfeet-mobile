@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import avatar from '~/assets/tempAvatar.png';
 
@@ -18,6 +18,7 @@ import {
 } from './styles';
 
 export default function Delivery({ navigation }) {
+  const [filter, setFilter] = useState('Pendentes');
   return (
     <Background>
       <Container>
@@ -29,8 +30,12 @@ export default function Delivery({ navigation }) {
         <DeliveryHeader>
           <Text>Entregas</Text>
           <Filters>
-            <FilterOption>Pendentes</FilterOption>
-            <FilterOption>Entregues</FilterOption>
+            <FilterOption isActive={filter === 'Pendentes'}>
+              Pendentes
+            </FilterOption>
+            <FilterOption isActive={filter === 'Entregues'}>
+              Entregues
+            </FilterOption>
           </Filters>
         </DeliveryHeader>
         <DeliveryInfo navigation={navigation} />

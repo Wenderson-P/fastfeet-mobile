@@ -46,5 +46,5 @@ export const FilterOption = styled.Text`
   margin: 0px 10px;
   color: #7d40e7;
   font-weight: bold;
-  text-decoration: underline;
+  text-decoration: ${props => (props.isActive ? ' underline' : 'none')};
 `;
