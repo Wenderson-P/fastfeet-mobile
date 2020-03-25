@@ -17,6 +17,7 @@ export default function DeliveryDetails({ navigation }) {
           iconColor="#E74040"
           iconSize={24}
           title="Informar Problema"
+          onPress={() => navigation.navigate('ReportDelivery')}
         />
         <Line />
         <DeliveryActionButton
