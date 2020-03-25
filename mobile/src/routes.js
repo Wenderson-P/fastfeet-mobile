@@ -10,9 +10,11 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import SignIn from './pages/SignIn';
 import Delivery from './pages/Delivery';
 import Profile from './pages/Profile';
+
 import DeliveryDetails from './pages/Delivery/DeliveryDetails';
 import DeliveryProblems from './pages/Delivery/DeliveryDetails/DeliveryProblems';
 import ConfirmDelivery from './pages/Delivery/DeliveryDetails/ConfirmDelivery';
+import ReportDelivery from './pages/Delivery/DeliveryDetails/ReportDelivery';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -47,6 +49,32 @@ function DeliveryStack({ navigation }) {
             <TouchableOpacity
               onPress={() => {
                 navigation.goBack();
+              }}
+            >
+              <Icon name="chevron-left" size={20} color="black" />
+            </TouchableOpacity>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="ReportDelivery"
+        component={ReportDelivery}
+        options={{
+          title: 'Informar um problema',
+          headerStyle: {
+            backgroundColor: '#7D40E7',
+            height: 80,
+          },
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            fontSize: 16,
+          },
+          headerTitleAlign: 'center',
+          headerTintColor: '#fff',
+          headerLeft: () => (
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('DeliveryDetails');
               }}
             >
               <Icon name="chevron-left" size={20} color="black" />
