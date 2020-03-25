@@ -33,6 +33,16 @@ function DeliveryStack({ navigation }) {
         component={DeliveryDetails}
         options={{
           title: 'Detalhes',
+          headerStyle: {
+            backgroundColor: '#7D40E7',
+            height: 80,
+          },
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            fontSize: 16,
+          },
+          headerTitleAlign: 'center',
+          headerTintColor: '#fff',
           headerLeft: () => (
             <TouchableOpacity
               onPress={() => {
@@ -49,10 +59,20 @@ function DeliveryStack({ navigation }) {
         component={DeliveryProblems}
         options={{
           title: 'Visualizar Problemas',
+          headerStyle: {
+            backgroundColor: '#7D40E7',
+            height: 80,
+          },
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            fontSize: 16,
+          },
+          headerTitleAlign: 'center',
+          headerTintColor: '#fff',
           headerLeft: () => (
             <TouchableOpacity
               onPress={() => {
-                navigation.goBack();
+                navigation.navigate('DeliveryDetails');
               }}
             >
               <Icon name="chevron-left" size={20} color="black" />
@@ -65,10 +85,20 @@ function DeliveryStack({ navigation }) {
         component={ConfirmDelivery}
         options={{
           title: 'Confirmar entrega',
+          headerStyle: {
+            backgroundColor: '#7D40E7',
+            height: 80,
+          },
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            fontSize: 16,
+          },
+          headerTitleAlign: 'center',
+          headerTintColor: '#fff',
           headerLeft: () => (
             <TouchableOpacity
               onPress={() => {
-                navigation.goBack();
+                navigation.navigate('DeliveryDetails');
               }}
             >
               <Icon name="chevron-left" size={20} color="black" />
