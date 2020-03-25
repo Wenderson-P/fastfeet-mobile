@@ -8,9 +8,9 @@ export const Container = styled.View`
 
 export const Camera = styled.View`
   height: 80%;
-  margin-bottom: 3%;
 `;
 
 export const SubmitButton = styled(Button)`
   background-color: red;
+  margin-top: 20px;
 `;
