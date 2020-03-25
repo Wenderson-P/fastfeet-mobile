@@ -3,11 +3,15 @@ import Button from '~/components/Button';
 
 export const Container = styled.View`
   margin: 0px 30px;
-  justify-content: space-between;
 `;
 
-export const TextField = styled.TextInput`
-  height: 80%;
+export const TextField = styled.TextInput.attrs({
+  multiline: true,
+  textAlign: 'left',
+  textAlignVertical: 'top',
+})`
+  height: 60%;
+  background-color: #fff;
 `;
 export const SubmitButton = styled(Button)`
   background-color: red;
