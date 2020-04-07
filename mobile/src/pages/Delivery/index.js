@@ -17,10 +17,12 @@ import {
   Text,
   Filters,
   FilterOption,
+  FilterText,
 } from './styles';
 
 export default function Delivery({ navigation }) {
   const [filter, setFilter] = useState('Pendentes');
+
   return (
     <Background>
       <Container>
@@ -37,11 +39,15 @@ export default function Delivery({ navigation }) {
         <DeliveryHeader>
           <Text>Entregas</Text>
           <Filters>
-            <FilterOption isActive={filter === 'Pendentes'}>
-              Pendentes
+            <FilterOption onPress={() => setFilter('Pendentes')}>
+              <FilterText isActive={filter === 'Pendentes'}>
+                Pendentes
+              </FilterText>
             </FilterOption>
-            <FilterOption isActive={filter === 'Entregues'}>
-              Entregues
+            <FilterOption onPress={() => setFilter('Entregues')}>
+              <FilterText isActive={filter === 'Entregues'}>
+                Entregues
+              </FilterText>
             </FilterOption>
           </Filters>
         </DeliveryHeader>

@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { BaseButton } from 'react-native-gesture-handler';
 
 export const Background = styled.SafeAreaView`
   background-color: #ffffff;
@@ -32,7 +33,7 @@ export const Name = styled.Text`
 
 export const UserName = styled.Text``;
 
-export const LogoutButton = styled.Text`
+export const LogoutButton = styled(BaseButton)`
   margin-left: auto;
 `;
 
@@ -53,8 +54,11 @@ export const Filters = styled.View`
   font-weight: bold;
 `;
 
-export const FilterOption = styled.Text`
+export const FilterOption = styled(BaseButton)`
   margin: 0px 10px;
+`;
+
+export const FilterText = styled.Text`
   color: ${props => (props.isActive ? ' #7d40e7' : '#999999')};
   font-weight: bold;
   text-decoration: ${props => (props.isActive ? ' underline' : 'none')};
