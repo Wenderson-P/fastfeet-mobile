@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import avatar from '~/assets/tempAvatar.png';
 
 import DeliveryInfo from '~/components/DeliveryInfo';
@@ -26,6 +27,7 @@ export default function Delivery({ navigation }) {
           <Avatar source={avatar} />
           <Welcome>Bem vindo de volta,{'\n Wenderson Pacheco'}</Welcome>
           <LogoutButton />
+            <Icon name="exit-to-app" size={24} color="#E74040" />
         </Header>
         <DeliveryHeader>
           <Text>Entregas</Text>
