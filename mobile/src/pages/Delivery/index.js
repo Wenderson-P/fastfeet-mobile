@@ -11,6 +11,7 @@ import {
   Header,
   Avatar,
   Welcome,
+  Name,
   LogoutButton,
   DeliveryHeader,
   Text,
@@ -25,9 +26,13 @@ export default function Delivery({ navigation }) {
       <Container>
         <Header>
           <Avatar source={avatar} />
-          <Welcome>Bem vindo de volta,{'\n Wenderson Pacheco'}</Welcome>
-          <LogoutButton />
+          <Welcome>
+            Bem vindo de volta,{'\n'}
+            <Name>Wenderson Pacheco</Name>
+          </Welcome>
+          <LogoutButton>
             <Icon name="exit-to-app" size={24} color="#E74040" />
+          </LogoutButton>
         </Header>
         <DeliveryHeader>
           <Text>Entregas</Text>

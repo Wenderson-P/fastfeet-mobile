@@ -17,13 +17,24 @@ export const Avatar = styled.Image`
 
 export const Header = styled.View`
   flex-direction: row;
+  align-items: center;
+  margin-bottom: 22px;
 `;
 
-export const Welcome = styled.Text``;
+export const Welcome = styled.Text`
+  margin-left: 10px;
+`;
+
+export const Name = styled.Text`
+  font-size: 22px;
+  font-weight: bold;
+`;
 
 export const UserName = styled.Text``;
 
-export const LogoutButton = styled.Text``;
+export const LogoutButton = styled.Text`
+  margin-left: auto;
+`;
 
 export const DeliveryHeader = styled.View`
   flex-direction: row;
