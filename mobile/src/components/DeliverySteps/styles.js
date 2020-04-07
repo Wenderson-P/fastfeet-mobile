@@ -16,6 +16,7 @@ export const Row = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+  margin-bottom: 20px;
 `;
 
 export const Step = styled.View`
@@ -35,4 +36,5 @@ export const Line = styled.View`
 export const StepLabel = styled.Text`
   font-size: 8px;
   color: #999999;
+  text-align: center;
 `;
