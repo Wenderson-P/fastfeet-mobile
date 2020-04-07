@@ -44,7 +44,7 @@ export const Filters = styled.View`
 
 export const FilterOption = styled.Text`
   margin: 0px 10px;
-  color: #7d40e7;
+  color: ${props => (props.isActive ? ' #7d40e7' : '#999999')};
   font-weight: bold;
   text-decoration: ${props => (props.isActive ? ' underline' : 'none')};
 `;
