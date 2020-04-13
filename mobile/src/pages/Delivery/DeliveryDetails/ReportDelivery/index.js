@@ -26,7 +26,9 @@ export default function ReportDelivery({ route }) {
         onChangeText={setReport}
         value={report}
       />
-      <SubmitButton onPress={() => handleSubmit()}>Enviar</SubmitButton>
+      <SubmitButton returnKeyType="send" onPress={() => handleSubmit()}>
+        Enviar
+      </SubmitButton>
     </Container>
   );
 }
