@@ -81,6 +81,7 @@ export default function DeliveryInfo({ navigation, userId, filter }) {
           </Footer>
         </Item>
       )}
+      keyExtractor={item => item.id}
     />
   );
 }
