@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { format, parseISO } from 'date-fns';
-import { FlatList, ProblemsList, Problem, Date } from './styles';
+import { FlatList, ProblemsList, Problem, Date, View, Text } from './styles';
 
 import api from '~/services/api';
 
@@ -35,6 +35,11 @@ export default function DeliveryProblems({ route }) {
           <Date>{item.date}</Date>
         </ProblemsList>
       )}
+      ListEmptyComponent={
+        <View>
+          <Text>Sem problemas registrados</Text>
+        </View>
+      }
     />
   );
 }

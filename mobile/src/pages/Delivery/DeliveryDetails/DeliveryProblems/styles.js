@@ -30,3 +30,13 @@ export const Date = styled.Text`
   padding-top: 2px;
   margin-left: 10px;
 `;
+
+export const View = styled.View`
+  margin: 30px 0px;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Text = styled.Text`
+  font-size: 24px;
+`;
