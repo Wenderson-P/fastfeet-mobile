@@ -18,7 +18,6 @@ export function* signIn({ payload }) {
     Alert.alert('Falha na autenticação');
     yield put(signInFailure());
   }
-  // history.push('/dashboard');
 }
 
 export function signOut() {
