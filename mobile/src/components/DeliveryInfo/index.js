@@ -28,17 +28,21 @@ export default function DeliveryInfo({ navigation, userId, filter }) {
 
       response.data.map(delivery => {
         let activeStep = 1;
+        let situation = 'Pendente';
         if (delivery.start_date) {
           const startDate = format(parseISO(delivery.start_date), 'dd/MM/yyyy');
           delivery.startDate = startDate;
           activeStep = 2;
+          situation = 'Retirado';
         }
         if (delivery.end_date) {
           const endDate = format(parseISO(delivery.end_date), 'dd/MM/yyyy');
           delivery.endDate = endDate;
           activeStep = 3;
+          situation = 'Entregue';
         }
         delivery.activeStep = activeStep;
+        delivery.situation = situation;
       });
       setDeliveries(response.data);
     }
