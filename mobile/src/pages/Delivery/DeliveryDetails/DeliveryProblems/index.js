@@ -24,13 +24,15 @@ export default function DeliveryProblems({ route }) {
     loadProblems();
   }, []);
 
-export default function DeliveryProblems() {
   return (
-    <Container>
-      <ProblemsList>
-        <Problem>Destinatário ausente</Problem>
-        <Date>15/02/2020</Date>
-      </ProblemsList>
-    </Container>
+    <FlatList
+      data={problems}
+      renderItem={({ item }) => (
+        <ProblemsList>
+          <Problem>{item.description}</Problem>
+          <Date>{item.date}</Date>
+        </ProblemsList>
+      )}
+    />
   );
 }
