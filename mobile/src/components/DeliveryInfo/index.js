@@ -26,7 +26,7 @@ export default function DeliveryInfo({ navigation, userId, filter }) {
         `/deliveryman/${userId}/deliveries?q=${filter}`
       );
 
-      response.data.map(delivery => {
+      const data = response.data.map(delivery => {
         let activeStep = 1;
         let situation = 'Pendente';
         if (delivery.start_date) {
@@ -41,16 +41,20 @@ export default function DeliveryInfo({ navigation, userId, filter }) {
           activeStep = 3;
           situation = 'Entregue';
         }
-        delivery.activeStep = activeStep;
-        delivery.situation = situation;
+        return {
+          ...delivery,
+          activeStep,
+          situation,
+        };
       });
-      setDeliveries(response.data);
+      setDeliveries(data);
     }
     loadDeliveries();
   }, [filter]);
   return (
     <FlatList
       data={deliveries}
+      keyExtractor={item => `item-${item.id}`}
       renderItem={({ item }) => (
         <Item>
           <Header>
@@ -81,7 +85,6 @@ export default function DeliveryInfo({ navigation, userId, filter }) {
           </Footer>
         </Item>
       )}
-      keyExtractor={item => item.id}
     />
   );
 }
