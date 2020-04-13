@@ -11,7 +11,7 @@ import {
   DateRow,
 } from './styles';
 
-export default function DeliveryInfoCard() {
+export default function DeliverySituationCard({ delivery }) {
   return (
     <Container>
       <CardHeader>
@@ -20,16 +20,16 @@ export default function DeliveryInfoCard() {
       </CardHeader>
       <Row>
         <RowLabel>Status</RowLabel>
-        <RowData>Pendente</RowData>
+        <RowData>{delivery.situation}</RowData>
       </Row>
       <DateRow>
         <Row>
           <RowLabel>Data de retirada</RowLabel>
-          <RowData>Yamaha SX7</RowData>
+          <RowData>{delivery.startDate}</RowData>
         </Row>
         <Row>
           <RowLabel>Data de entrega</RowLabel>
-          <RowData>--/--/--</RowData>
+          <RowData>{delivery.endDate}</RowData>
         </Row>
       </DateRow>
     </Container>
