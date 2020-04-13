@@ -10,24 +10,28 @@ import {
   RowData,
 } from './styles';
 
-export default function DeliveryInfoCard() {
+export default function DeliveryInfoCard({ delivery }) {
   return (
     <Container>
       <CardHeader>
         <Icon name="local-shipping" size={24} color="#7D40E7" />
-        <HeaderLabel>Informações da entrega</HeaderLabel>
+        <HeaderLabel>Informações da entrega </HeaderLabel>
       </CardHeader>
       <Row>
         <RowLabel>Destinatário</RowLabel>
-        <RowData>Ludwig van Beethoven</RowData>
+        <RowData>{delivery.recipient.name}</RowData>
       </Row>
       <Row>
         <RowLabel>Endereço de entrega</RowLabel>
-        <RowData>Rua Beethoven, 1729, Diadema - SP, 09960-580</RowData>
+        <RowData>
+          {delivery.recipient.street}, {delivery.recipient.number},{' '}
+          {delivery.recipient.city} - {delivery.recipient.state},{' '}
+          {delivery.recipient.cep}
+        </RowData>
       </Row>
       <Row>
         <RowLabel>Produto</RowLabel>
-        <RowData>Yamaha SX7</RowData>
+        <RowData>{delivery.product}</RowData>
       </Row>
     </Container>
   );
