@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.ScrollView`
+export const FlatList = styled.FlatList`
   margin: 0px 30px;
 `;
 
