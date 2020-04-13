@@ -20,10 +20,13 @@ export const Problem = styled.Text`
   font-size: 16px;
   font-weight: 300;
   color: #999999;
+  flex: 1;
+  text-align: justify;
 `;
 
 export const Date = styled.Text`
   font-size: 12px;
   color: #999999;
   padding-top: 2px;
+  margin-left: 10px;
 `;
