@@ -19,5 +19,5 @@ export default function DeliveryActionButton({
 }
 
 DeliveryActionButton.propTypes = {
-  children: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
