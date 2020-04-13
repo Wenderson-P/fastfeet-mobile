@@ -8,6 +8,7 @@ export const Container = styled(BaseButton)`
   justify-content: center;
   border: 1px solid #f8f9fd;
   box-shadow: 4px 8px 0 red;
+  padding: 10px 0px;
 `;
 
 export const Text = styled.Text`
