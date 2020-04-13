@@ -18,11 +18,13 @@ import {
 } from './styles';
 import api from '~/services/api';
 
-export default function DeliveryInfo({ navigation, userId }) {
+export default function DeliveryInfo({ navigation, userId, filter }) {
   const [deliveries, setDeliveries] = useState([]);
   useEffect(() => {
     async function loadDeliveries() {
-      const response = await api.get(`/deliveryman/${userId}/deliveries`);
+      const response = await api.get(
+        `/deliveryman/${userId}/deliveries?q=${filter}`
+      );
 
       response.data.map(delivery => {
         let activeStep = 1;
@@ -32,6 +34,8 @@ export default function DeliveryInfo({ navigation, userId }) {
           activeStep = 2;
         }
         if (delivery.end_date) {
+          const endDate = format(parseISO(delivery.end_date), 'dd/MM/yyyy');
+          delivery.endDate = endDate;
           activeStep = 3;
         }
         delivery.activeStep = activeStep;
@@ -39,7 +43,7 @@ export default function DeliveryInfo({ navigation, userId }) {
       setDeliveries(response.data);
     }
     loadDeliveries();
-  }, []);
+  }, [filter]);
   return (
     <FlatList
       data={deliveries}
