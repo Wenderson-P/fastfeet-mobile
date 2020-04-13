@@ -18,7 +18,9 @@ export default function DeliveryDetails({ navigation, route }) {
           iconColor="#E74040"
           iconSize={24}
           title="Informar Problema"
-          onPress={() => navigation.navigate('ReportDelivery')}
+          onPress={() =>
+            navigation.navigate('ReportDelivery', { deliveryId: delivery.id })
+          }
         />
         <Line />
         <DeliveryActionButton
@@ -26,7 +28,9 @@ export default function DeliveryDetails({ navigation, route }) {
           iconColor="#E7BA40"
           iconSize={24}
           title="Visualizar Problemas"
-          onPress={() => navigation.navigate('DeliveryProblems')}
+          onPress={() =>
+            navigation.navigate('DeliveryProblems', { deliveryId: delivery.id })
+          }
         />
         <Line />
         <DeliveryActionButton
@@ -34,7 +38,9 @@ export default function DeliveryDetails({ navigation, route }) {
           iconColor="#7D40E7"
           iconSize={24}
           title="Confirmar Entrega"
-          onPress={() => navigation.navigate('ConfirmDelivery')}
+          onPress={() =>
+            navigation.navigate('ConfirmDelivery', { deliveryId: delivery.id })
+          }
         />
       </Buttons>
     </Container>
