@@ -6,11 +6,12 @@ import DeliveryActionButton from '~/components/DeliveryActionButton';
 
 import { Container, Buttons, Line } from './styles';
 
-export default function DeliveryDetails({ navigation }) {
+export default function DeliveryDetails({ navigation, route }) {
+  const { delivery } = route.params;
   return (
     <Container>
-      <DeliveryInfoCard />
-      <DeliverySituationCard />
+      <DeliveryInfoCard delivery={delivery} />
+      <DeliverySituationCard delivery={delivery} />
       <Buttons>
         <DeliveryActionButton
           iconName="highlight-off"
