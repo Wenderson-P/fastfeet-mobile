@@ -1,7 +1,11 @@
 import styled from 'styled-components/native';
 import { TouchableOpacity } from 'react-native';
 
-export const Container = styled.View`
+export const FlatList = styled.FlatList`
+  margin-bottom: 100px;
+`;
+
+export const Item = styled.View`
   border-radius: 4px;
   border: 1px #0000001a;
   margin-bottom: 20px;
