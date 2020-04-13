@@ -34,7 +34,7 @@ function DeliveryStack({ navigation }) {
         name="DeliveryDetails"
         component={DeliveryDetails}
         options={{
-          title: 'Detalhes',
+          title: 'Detalhes da encomenda',
           headerStyle: {
             backgroundColor: '#7D40E7',
             height: 80,
