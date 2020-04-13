@@ -15,6 +15,7 @@ export default function DeliveryProblems({ route }) {
       const data = response.data.map(problem => {
         const date = format(parseISO(problem.created_at), 'dd/MM/yyyy');
         return {
+          id: problem.problem_id,
           description: problem.description,
           date,
         };
@@ -26,6 +27,7 @@ export default function DeliveryProblems({ route }) {
 
   return (
     <FlatList
+      keyExtractor={item => `item-${item.id}`}
       data={problems}
       renderItem={({ item }) => (
         <ProblemsList>
