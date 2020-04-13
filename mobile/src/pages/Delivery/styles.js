@@ -6,7 +6,7 @@ export const Background = styled.SafeAreaView`
   flex: 1;
 `;
 
-export const Container = styled.ScrollView`
+export const Container = styled.View`
   margin: 30px;
 `;
 
