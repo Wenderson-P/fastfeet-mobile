@@ -49,19 +49,19 @@ export default function Delivery({ navigation }) {
         <DeliveryHeader>
           <Text>Entregas</Text>
           <Filters>
-            <FilterOption onPress={() => setFilter('Pendentes')}>
-              <FilterText isActive={filter === 'Pendentes'}>
-                Pendentes
-              </FilterText>
+            <FilterOption onPress={() => setFilter('')}>
+              <FilterText isActive={filter === ''}>Pendentes</FilterText>
             </FilterOption>
-            <FilterOption onPress={() => setFilter('Entregues')}>
-              <FilterText isActive={filter === 'Entregues'}>
-                Entregues
-              </FilterText>
+            <FilterOption onPress={() => setFilter('ended')}>
+              <FilterText isActive={filter === 'ended'}>Entregues</FilterText>
             </FilterOption>
           </Filters>
         </DeliveryHeader>
-        <DeliveryInfo navigation={navigation} userId={user.id} />
+        <DeliveryInfo
+          navigation={navigation}
+          userId={user.id}
+          filter={filter}
+        />
       </Container>
     </Background>
   );
