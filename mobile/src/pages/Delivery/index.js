@@ -24,7 +24,7 @@ import {
 } from './styles';
 
 export default function Delivery({ navigation }) {
-  const [filter, setFilter] = useState('Pendentes');
+  const [filter, setFilter] = useState('');
   const user = useSelector(state => state.user);
   const dispatch = useDispatch();
   return (
