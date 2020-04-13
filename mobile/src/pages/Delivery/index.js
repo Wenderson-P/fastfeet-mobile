@@ -42,7 +42,7 @@ export default function Delivery({ navigation }) {
             Bem vindo de volta,{'\n'}
             <Name>{user.name}</Name>
           </Welcome>
-          <LogoutButton>
+          <LogoutButton onPress={() => dispatch(signOut())}>
             <Icon name="exit-to-app" size={24} color="#E74040" />
           </LogoutButton>
         </Header>
