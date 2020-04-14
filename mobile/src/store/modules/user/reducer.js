@@ -5,6 +5,7 @@ const INITIAL_STATE = {
   email: null,
   avatar: null,
   id: null,
+  created_at: null,
 };
 
 export default function user(state = INITIAL_STATE, action) {
@@ -15,10 +16,15 @@ export default function user(state = INITIAL_STATE, action) {
         draft.email = action.payload.email;
         draft.avatar = action.payload.avatar;
         draft.id = action.payload.id;
+        draft.created_at = action.payload.created_at;
         break;
       }
       case '@auth/SIGN_OUT': {
-        draft.user = null;
+        draft.name = null;
+        draft.email = null;
+        draft.avatar = null;
+        draft.id = null;
+        draft.created_at = null;
         break;
       }
       default:

@@ -5,7 +5,7 @@ export function signInRequest(id) {
   };
 }
 
-export function signInSuccess(id, name, email, avatar) {
+export function signInSuccess(id, name, email, avatar, created_at) {
   return {
     type: '@auth/SIGN_IN_SUCCESS',
     payload: {
@@ -13,6 +13,7 @@ export function signInSuccess(id, name, email, avatar) {
       name,
       email,
       avatar,
+      created_at,
     },
   };
 }
