@@ -22,7 +22,24 @@ export default function ConfirmDelivery({ route, navigation }) {
   const cameraRef = useRef(null);
   const [pictureUri, setPictureUri] = useState();
 
-import { Container, Camera, SubmitButton } from './styles';
+  async function handleSubmit() {
+    const file = new FormData();
+    file.append('file', {
+      type: 'image/jpg',
+      uri: pictureUri,
+      name: 'assignature.jpg',
+    });
+
+    const response = await api.post('files', file);
+    await api.put(
+      `/deliveryman/${auth.id}/deliveries?q=${deliveryId}&action=end`,
+      {
+        signature_id: response.data.id,
+      }
+    );
+    Alert.alert('Foto enviada com sucesso');
+    navigation.navigate('Delivery');
+  }
 
   async function handleTakePicture() {
     if (cameraRef) {
@@ -63,7 +80,7 @@ import { Container, Camera, SubmitButton } from './styles';
             </>
           )}
       </Camera>
-      <SubmitButton>Enviar</SubmitButton>
+      <SubmitButton onPress={() => handleSubmit()}>Enviar</SubmitButton>
     </Container>
   );
 }
