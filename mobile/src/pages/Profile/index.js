@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { useSelector, useDispatch } from 'react-redux';
 import {
   Container,
   Form,
@@ -9,20 +10,30 @@ import {
   FieldLabel,
 } from './styles';
 
-import avatar from '~/assets/tempAvatar.png';
+import { signOut } from '~/store/modules/auth/actions';
 
 export default function Profile() {
+  const user = useSelector(state => state.user);
+  const dispatch = useDispatch();
+
   return (
     <Container>
       <Form>
-        <Avatar source={avatar} />
+        <Avatar
+          source={{
+            uri: user.avatar
+              ? user.avatar.url
+              : `https://ui-avatars.com/api/?name=${user.name}&background=0D8ABC&color=fff`,
+          }}
+        />
         <FieldLabel>Nome completo</FieldLabel>
-        <FieldData>Gaspar Antunes</FieldData>
+        <FieldData>{user.name}</FieldData>
         <FieldLabel>Email</FieldLabel>
-        <FieldData>example@rocketseat.com.br</FieldData>
-        <FieldLabel>Data de cadatro</FieldLabel>
-        <FieldData>10/01/2020</FieldData>
-        <Logout>Logout</Logout>
+        <FieldData>{user.email}</FieldData>
+        <FieldLabel>Data de cadastro</FieldLabel>
+        {console.log(user)}
+        <FieldData>{user.created_at}</FieldData>
+        <Logout onPress={() => dispatch(signOut())}>Logout</Logout>
       </Form>
     </Container>
   );
