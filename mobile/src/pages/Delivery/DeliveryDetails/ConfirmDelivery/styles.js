@@ -9,6 +9,23 @@ export const Camera = styled.View`
   height: 80%;
 `;
 
+export const PictureContainer = styled.View``;
+
+export const Picture = styled.Image``;
+
+export const NewPictureButton = styled.TouchableHighlight`
+  align-self: center;
+  position: absolute;
+  top: 85%;
+  background-color: yellow;
+  padding: 10px;
+  border-radius: 4px;
+`;
+
+export const Text = styled.Text`
+  font-size: 20px;
+  font-weight: bold;
+`;
 
 export const TakePicture = styled.TouchableHighlight`
   margin-top: 20px;

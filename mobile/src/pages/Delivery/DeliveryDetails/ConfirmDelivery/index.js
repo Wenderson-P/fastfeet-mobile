@@ -7,6 +7,9 @@ import api from '~/services/api';
 import {
   Container,
   Camera,
+  PictureContainer,
+  Picture,
+  NewPictureButton,
   Text,
   SubmitButton,
   TakePicture,
@@ -33,6 +36,12 @@ import { Container, Camera, SubmitButton } from './styles';
     <Container>
       <Camera>
         {pictureUri ? (
+          <PictureContainer>
+            <Picture source={{ uri: pictureUri }} style={{ height: '100%' }} />
+            <NewPictureButton onPress={() => setPictureUri('')}>
+              <Text>Tirar outra foto</Text>
+            </NewPictureButton>
+          </PictureContainer>
         ) : (
             <>
               <RNCamera
