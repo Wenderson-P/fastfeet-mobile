@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { useSelector, useDispatch } from 'react-redux';
-import avatar from '~/assets/tempAvatar.png';
 
 import DeliveryInfo from '~/components/DeliveryInfo';
 
