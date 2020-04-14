@@ -1,6 +1,7 @@
 import { all, takeLatest, call, put } from 'redux-saga/effects';
 import { Alert } from 'react-native';
 
+import { format, parseISO } from 'date-fns';
 import api from '~/services/api';
 // import history from '~/services/history';
 
@@ -13,7 +14,10 @@ export function* signIn({ payload }) {
     const response = yield call(api.get, `deliveryman/${id}`);
 
     const { name, email, avatar } = response.data;
-    yield put(signInSuccess(id, name, email, avatar));
+
+    const created_at = format(parseISO(response.data.created_at), 'dd/MM/yyyy');
+
+    yield put(signInSuccess(id, name, email, avatar, created_at));
   } catch (error) {
     Alert.alert('Falha na autenticação');
     yield put(signInFailure());
