@@ -21,8 +21,8 @@ export default function DeliveryDetails({ navigation, route }) {
   const auth = useSelector(state => state.auth);
 
   function handleConfirmDelivery() {
-    if (delivery.start_date === null) {
-      Alert.alert('A entrega precisa ser retirada primeiro');
+    if (delivery.end_date !== null) {
+      Alert.alert('A encomenda já foi entregue');
     } else {
       navigation.navigate('ConfirmDelivery', { deliveryId: delivery.id });
     }
