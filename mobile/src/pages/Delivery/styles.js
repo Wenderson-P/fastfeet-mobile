@@ -24,6 +24,8 @@ export const Header = styled.View`
 
 export const Welcome = styled.Text`
   margin-left: 10px;
+  width: 80%;
+  flex-wrap: wrap;
 `;
 
 export const Name = styled.Text`
