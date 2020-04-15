@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { RNCamera } from 'react-native-camera';
 import { Alert } from 'react-native';
 import { useSelector } from 'react-redux';
