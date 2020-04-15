@@ -7,6 +7,7 @@ import {
   FieldData,
   Avatar,
   Logout,
+  LogoutText,
   FieldLabel,
 } from './styles';
 
@@ -31,9 +32,10 @@ export default function Profile() {
         <FieldLabel>Email</FieldLabel>
         <FieldData>{user.email}</FieldData>
         <FieldLabel>Data de cadastro</FieldLabel>
-        {console.log(user)}
         <FieldData>{user.created_at}</FieldData>
-        <Logout onPress={() => dispatch(signOut())}>Logout</Logout>
+        <Logout onPress={() => dispatch(signOut())}>
+          <LogoutText>Logout</LogoutText>
+        </Logout>
       </Form>
     </Container>
   );
